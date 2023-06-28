@@ -1,5 +1,23 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>StackviewPage.qml</file>
+        <file>menu1.qml</file>
+        <file>menu2.qml</file>
+        <file>DoanhThu.qml</file>
+        <file>CaiDatGia.qml</file>
+        <file>KTMotor.qml</file>
+        <file>Deposit.qml</file>
+        <file>CamBien.qml</file>
+        <file>XoaLoiMotor.qml</file>
+        <file>KtRFID.qml</file>
+        <file>CDMenhGia.qml</file>
+        <file>CDThoiGian.qml</file>
+        <file>SingleVend.qml</file>
+        <file>WaterTimer.qml</file>
+        <file>NhanTien.qml</file>
+        <file>IDMay.qml</file>
+        <file>TestMenu1.qml</file>
+        <file>TestMenu2.qml</file>
     </qresource>
 </RCC>

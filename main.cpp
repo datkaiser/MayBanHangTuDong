@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include "lobby.h"
 #include "login.h"
+#include "logintest.h"
 #include "page2.h"
 
 int main(int argc, char *argv[])
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     qmlRegisterType<Lobby>("MayBanHangTuDong.Lobby",1,0,"Lobby");
     qmlRegisterType<Login>("MayBanHangTuDong.Login",1,0,"Login");
+    qmlRegisterType<Logintest>("MayBanHangTuDong.Logintest",1,0,"Logintest");
     qmlRegisterType<Page2>("MayBanHangTuDong.Page2",1,0,"Page2");
 
     QQmlApplicationEngine engine;

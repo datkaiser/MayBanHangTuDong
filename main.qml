@@ -4,6 +4,7 @@ import QtQuick.Controls 2.2
 import MayBanHangTuDong.Lobby 1.0
 import MayBanHangTuDong.Login 1.0
 import MayBanHangTuDong.Page2 1.0
+import MayBanHangTuDong.Logintest 1.0
 
 Window {
     id: root
@@ -15,11 +16,19 @@ Window {
     property bool isSignedInTwo: false
     property bool isSignedIn3: false
 
+
+   // StackView {
+     //   id: contentFrame
+       // initialItem: Qt.resolvedUrl()
+        //width: root.width
+        //height: root.height
+    //}
     Lobby{
         id: myLobby
         onSaveSucess:{
             console.log("onSaveSuccess")
             root.isSignedIn = true
+            mat_khau.focus = true
         }
     }
     Login{
@@ -27,11 +36,33 @@ Window {
         onLoginSucess:{
             console.log("onLoginSuccess")
             root.isSignedInTwo = true
-            mat_khau.enabled = false
+            recLobby.visible = false
+            scr1.enabled = false
+            recPassword.forceActiveFocus()
+            // This is available in all editors.
+        }
+        onLogintestSucess: {
+            console.log("onLoginSuccess")
+            root.isSignedInTwo = true
+            recLobby.visible = false
+            scr1.enabled = false
+            recPassword.forceActiveFocus()
+            mainLoader.source = "TestMenu1.qml"
+        }
+
+        onLoginFail:{
+            console.log("onLoginFail")
+            root.isSignedInTwo = false
+
+        }
+    }
+    Logintest{
+        id: myLogintest
+        onLogintestSucess:{
 
             // This is available in all editors.
         }
-        onLoginFail:{
+        onLogintestFail:{
             console.log("onLoginFail")
             root.isSignedInTwo = false
 
@@ -48,10 +79,7 @@ Window {
     Rectangle{
         id:recLobby
         visible: !isSignedIn
-        Shortcut{
-            sequence: "p"
-            onActivated: myLobby.save("p")
-        }
+
         Label {
             id:labelLobby
             anchors.centerIn: parent.Center
@@ -62,6 +90,11 @@ Window {
             height: 150
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
+            Shortcut{
+                id: scr1
+                sequence: "8"
+                onActivated: myLobby.save("8")
+            }
         }
         Label {
             id: label1
@@ -128,193 +161,45 @@ Window {
                 echoMode: TextInput.Password
                 Keys.onReturnPressed: {
                      myLogin.login(mat_khau.text)
+
                 }
                 font.pointSize: 14
                 horizontalAlignment: Text.AlignHCenter
                 opacity: 0.2
             }
+            Label{
+                            id: statusLable
+                            x: 53
+                            y: 45
+                            text: myLogin.status
+                            color: "red"
+                        }
         }
 
     }
 
-   Rectangle{
-       id:recMenu1
-       anchors.centerIn: parent
-       Column{
-           id: columnpage3
-           visible: isSignedInTwo && !isSignedIn3
-           anchors.centerIn: parent
-           //Keys.onRightPressed: {
-             //  myPage2.save2("right")
-           //}
-           Label{
-                anchors.right: parent.right
-               text: "1/2"
-           }
+    Rectangle{
+        id: reC3
+        visible: isSignedInTwo
+        height: parent.height
+        width: parent.width
+        Loader {
+            id: mainLoader
+            focus: true
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.top
+                bottom: parent.bottom
+            }
 
-           Button{
-               id: dt1
-               text: "1.DOANH THU"
-               leftPadding: -120
-               width: 200
-               height: 20
-               focus: true
+            source: "menu1.qml"
+        }
+        //Keys.onRightPressed: {
 
-           }
-           Button{
-               text: "2.CAI DAT GIA"
-               leftPadding: -120
-               width: 200
-               height: 20
+            //myloader4.source = "page1.qml"
+        //}
 
-           }
-           Button{
-               text: "3.KIEM TRA MOTOR"
-               leftPadding: -100
-
-               width: 200
-               height: 20
-              }
-           Button{
-               text: "4.NAP/TRA TIEN THOI"
-               leftPadding: -90
-               width: 200
-               height: 20
-
-           }
-           Button{
-               text: "5.CMA BIEN ROI"
-               leftPadding: -110
-               width: 200
-               height: 20
-
-           }
-           Button{
-               text: "6.ID MAY"
-               leftPadding: -135
-               width: 200
-               height: 20
-
-           }
-           Button{
-               text: "7. XOA LOI MOTOR"
-               leftPadding: -100
-               width: 200
-               height: 20
-
-           }
-           Button{
-               id: pageButton
-               text: "chuyển"
-               leftPadding: -100
-               width: 200
-               visible: false
-               height: 20
-               Shortcut{
-                   sequence: "Right"
-                   onActivated:pageButton.clicked()
-               }
-               Connections {
-                           target: pageButton
-                           onClicked:  myPage2.save2(Shortcut)
-                       }
-           }
-       }
-
-   }
-   Rectangle{
-       id:recMenu2
-       anchors.centerIn: parent
-       Column{
-           id: pageColum2
-           visible: isSignedIn3
-           anchors.centerIn: parent
-           Label{
-                anchors.right: parent.right
-               text: "2/2"
-           }
-           Button{
-
-               text: "1.KIEM TRA MOTOR NHANH"
-               leftPadding: -80
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "2.KIEM TRA RFID"
-               leftPadding: -120
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "3.CAI DAT MENH GIA TIEN"
-               leftPadding: -85
-
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "4.CAI DAT THOI GIAN"
-               leftPadding: -100
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "5.SINGLE VEND"
-               leftPadding: -125
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "6.HOT WATER TIME"
-               leftPadding: -108
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               text: "7.TU NHAN TIEN"
-               leftPadding: -120
-               width: 200
-               height: 20
-               onClicked: {
-                   console.log("..")
-               }
-           }
-           Button{
-               id: page2Button
-               text: "chuyển"
-               leftPadding: -100
-               width: 200
-               visible: false
-               height: 20
-               Shortcut{
-                   sequence: "Left"
-                   onActivated:page2Button.clicked()
-               }
-               Connections {
-                           target: page2Button
-                           onClicked:  root.isSignedIn3 = false
-                       }
-           }
-       }
-   }
+    }
 
 }

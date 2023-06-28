@@ -30,4 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     lobby.h \
     login.h \
-    page2.h
+    page2.h \
+    logintest.h
+

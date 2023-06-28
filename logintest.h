@@ -1,25 +1,21 @@
-#ifndef LOGIN_H
-#define LOGIN_H
+#ifndef LOGINTEST_H
+#define LOGINTEST_H
 #include <QObject>
 
-class Login: public QObject{
+class Logintest: public QObject{
     Q_OBJECT
     Q_PROPERTY(QString status READ status WRITE setStatus NOTIFY statusChanged)
  public:
-    explicit Login(QObject *parent = nullptr):QObject(parent){
+    explicit Logintest(QObject *parent = nullptr):QObject(parent){
 
     }
     Q_INVOKABLE void login(QString const &password)
     {
-        if(password == "123"){
-            emit loginSucess();
-        }
-        else if(password =="000"){
+        if(password == "000"){
             emit logintestSucess();
-        }
-            else{
+        }else{
             setStatus("Password is not correct");
-            emit loginFail();
+            emit logintestFail();
         }
     }
 
@@ -36,11 +32,10 @@ class Login: public QObject{
     }
 
 signals:
-    void loginSucess();
-     void logintestSucess();
-    void loginFail();
+    void logintestSucess();
+    void logintestFail();
     void statusChanged();
 private:
     QString mStatus;
 };
-#endif // LOGIN_H
+#endif // LOGINTEST_H

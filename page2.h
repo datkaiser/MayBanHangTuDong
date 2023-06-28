@@ -11,7 +11,6 @@ class Page2: public QObject{
     }
     Q_INVOKABLE void save2(QString const &username)
     {
-        username;
         emit saveSucess2();
         setStatus(username);
     }

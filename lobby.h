@@ -11,7 +11,6 @@ class Lobby: public QObject{
     }
     Q_INVOKABLE void save(QString const &username)
     {
-        username;
         emit saveSucess();
         setStatus(username);
     }

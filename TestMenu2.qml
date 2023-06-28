@@ -5,7 +5,6 @@ Item {
     Rectangle{
         width: parent.width
         height: parent.height
-        color: "grey"
     Column{
     Label{
          anchors.left: parent.left
@@ -14,7 +13,7 @@ Item {
         width: parent.width
         Shortcut{
             sequence: "1"
-            onActivated: mainLoader.source = "DoanhThu.qml"
+            onActivated: mainLoader.source = ""
         }
     }
     Label{
@@ -23,7 +22,7 @@ Item {
         font.pointSize: 22
         Shortcut{
             sequence: "2"
-            onActivated: mainLoader.source = "CaiDatGia.qml"
+            onActivated: mainLoader.source = ""
         }
     }
     Label{
@@ -32,7 +31,7 @@ Item {
         font.pointSize: 22
         Shortcut{
             sequence: "3"
-            onActivated: mainLoader.source = "KTMotor.qml"
+            onActivated: mainLoader.source = ""
         }
     }
     Label{
@@ -41,7 +40,7 @@ Item {
         font.pointSize: 22
         Shortcut{
             sequence: "4"
-            onActivated: mainLoader.source = "Deposit.qml"
+            onActivated: mainLoader.source = ""
         }
     }
     Label{
@@ -50,7 +49,7 @@ Item {
         font.pointSize: 22
         Shortcut{
             sequence: "5"
-            onActivated: mainLoader.source = "CamBien.qml"
+            onActivated: mainLoader.source = ""
         }
     }
     Label{
@@ -59,11 +58,9 @@ Item {
         font.pointSize: 22
         Shortcut{
             sequence: "6"
-            onActivated: mainLoader.source = "IDMay.qml"
+            onActivated: mainLoader.source = ""
         }
     }
-
-
 
 }
    Button {

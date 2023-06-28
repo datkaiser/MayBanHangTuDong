@@ -3,45 +3,28 @@ import QtQuick.Controls 2.2
 import QtQuick.Window 2.2
 Item {
     Rectangle{
+
         width: parent.width
         height: parent.height
     Column{
         anchors.fill: parent
     Label{
-        id: labelGia
+        id: labelCDMG
          anchors.left: parent.left
-        text: "SET HOT WATER TIMER"
+        text: "TEST LAN"
         font.pointSize: 22
         width: parent.width
     }
-    Row{
-        id: rowOne
-        Label{
-            text: "TIMER :"
-            font.pointSize: 22
-        }
-        TextInput {
-            focus: true
-            id: gia
-            font.pointSize: 22
-            text: "0"
-        }
+    Button{
+        text: "CLICK ME"
+        width: parent.width
+
     }
-    Row{
-        id: rowTwo
-        Label{
-            text: "SET >"
-            font.pointSize: 22
-        }
-        TextInput {
-            focus: true
-            font.pointSize: 22
-            text: "0"
-        }
+    Label{
+       text: "Trả kết quả"
     }
+
   }
-
-
     Button {
         id: backButtton2
         visible: false
@@ -51,11 +34,12 @@ Item {
             margins: 40
         }
         text: "Back"
-        onClicked: mainLoader.source = "menu2.qml"
+        onClicked: mainLoader.source = "TestMenu1.qml"
     }
     Shortcut{
         sequence: "backspace"
         onActivated: backButtton2.clicked()
     }
+
 }
 }

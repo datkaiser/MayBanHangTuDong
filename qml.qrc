@@ -19,5 +19,7 @@
         <file>IDMay.qml</file>
         <file>TestMenu1.qml</file>
         <file>TestMenu2.qml</file>
+        <file>TestLan.qml</file>
+        <file>TestWifi.qml</file>
     </qresource>
 </RCC>

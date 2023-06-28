@@ -37,7 +37,7 @@ class Login: public QObject{
 
 signals:
     void loginSucess();
-     void logintestSucess();
+    void logintestSucess();
     void loginFail();
     void statusChanged();
 private:

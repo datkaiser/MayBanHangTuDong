@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
-import QtQuick.Controls 2.2
+import QtQuick.Controls 2.0
 import MayBanHangTuDong.Lobby 1.0
 import MayBanHangTuDong.Login 1.0
 import MayBanHangTuDong.Page2 1.0
@@ -14,8 +14,6 @@ Window {
     title: qsTr("")
     property bool isSignedIn: false
     property bool isSignedInTwo: false
-    property bool isSignedIn3: false
-
 
    // StackView {
      //   id: contentFrame

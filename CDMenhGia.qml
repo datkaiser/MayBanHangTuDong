@@ -6,9 +6,7 @@ Item {
 
         width: parent.width
         height: parent.height
-        color: "grey"
     Column{
-        anchors.fill: parent
     Label{
         id: labelCDMG
          anchors.left: parent.left
@@ -18,7 +16,6 @@ Item {
     }
     Row{
         id:rowOne
-        anchors.top: labelCDMG.bottom
         Label{
             text: "MIN :10,000!"
             font.pointSize: 22
@@ -29,7 +26,6 @@ Item {
         }
     }
     Row{
-        anchors.top: rowOne.bottom
         id: rowTwo
     Label{
         text: "Set MIN > "
@@ -43,7 +39,6 @@ Item {
     }
     }
     Row{
-        anchors.top: rowTwo.bottom
 
     Label{
 

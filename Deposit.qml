@@ -5,7 +5,6 @@ Item {
     id: item1
     Rectangle{ width: parent.width
         height: parent.height
-        color: "grey"
     Column{
     Label{
         id: labelGia

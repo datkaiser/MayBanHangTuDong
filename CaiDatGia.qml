@@ -8,7 +8,7 @@ Item {
 
         width: parent.width
         height: parent.height
-        color: "grey"
+
     Column{
     Label{
         id: labelGia
@@ -19,7 +19,6 @@ Item {
     }
     Row{
         id:rowOne
-        anchors.top: labelGia.bottom
         Label{
             text: "COT "
             font.pointSize: 22
@@ -45,7 +44,6 @@ Item {
     }
     Row{
         id: rowTwo
-        anchors.top: rowOne.bottom
         Label{
             text: "Gia > "
             font.pointSize: 22

@@ -5,7 +5,6 @@ Item {
     Rectangle{
         width: parent.width
         height: parent.height
-        color: "grey"
 
     Column{
         anchors.fill: parent

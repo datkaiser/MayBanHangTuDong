@@ -4,7 +4,6 @@ import QtQuick.Window 2.2
 Item {
     Rectangle{ width: parent.width
         height: parent.height
-        color: "grey"
     Column{
         Row{
         Label{

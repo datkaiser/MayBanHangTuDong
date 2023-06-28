@@ -9,8 +9,8 @@ import MayBanHangTuDong.Logintest 1.0
 Window {
     id: root
     visible: true
-    width: 316
-    height: 190
+    width: 480
+    height: 272
     title: qsTr("")
     property bool isSignedIn: false
     property bool isSignedInTwo: false
